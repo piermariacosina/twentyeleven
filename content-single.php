@@ -11,36 +11,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-		
-		<hr />
-		<!--<p><strong>Initializer</strong></p>-->
-		<p><?php the_field('initializer'); ?></p>
-		
-		<!--<?php if ( 'post' == get_post_type() ) : ?>
+
+		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php twentyeleven_posted_on(); ?>
-		</div><!-- .entry-meta
-		<?php endif; ?>-->
-		
-		<?php if(get_field('parameters')): ?>
-			<hr />
-			<p><strong>parameters</strong></p>
-			<ul>
-			<?php while(the_repeater_field('parameters')): ?>
-				
-			   <li><strong><?php the_sub_field('argument'); ?></strong> (<?php the_sub_field('type'); ?> | <?php the_sub_field('parameter_type'); ?>) <?php if(the_sub_field('default')){ echo "- default: ".the_sub_field('default'); } ?> | <?php the_sub_field('description'); ?></li>
-			<?php endwhile; ?>
-			</ul>
-		<?php endif; ?>
-		
-		<?php if(get_field('return_values')): ?>
-			<hr />
-			<p><strong>return</strong></p>
-			<ul>
-			<?php while(the_repeater_field('return_values')): ?>
-			   		<li><?php the_sub_field('return'); ?> (<?php the_sub_field('type'); ?>) | <?php the_sub_field('description'); ?></li>
-			<?php endwhile; ?>
-			</ul>
+		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
@@ -48,86 +23,9 @@
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'twentyeleven' ) . '</span>', 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
-	
-	<?php if(get_field('description')): ?>
-		<hr />
-		<p><strong>description</strong></p>
-		<p><?php the_field('description'); ?></p>
-	<?php endif; ?>
-	
-	
-	<?php if(get_field('usage')): ?>
-		<hr />
-		<p><strong>usage</strong></p>
-		<p><?php the_field('usage'); ?></p>
-	<?php endif; ?>
-	
-	<?php if(get_field('examples')): ?>
-		<hr />
-		<p><strong>examples</strong></p>
-		<p><?php the_field('examples'); ?></p>
-	<?php endif; ?>
-	
-	<?php if(get_field('called_at')): ?>
-		<hr />
-		<p><strong>called at</strong></p>
-		<?php while(the_repeater_field('called_at')): ?>
-		  <?php $post_object_called_at = get_sub_field('link'); ?>
-		   <p><a href="<?php echo get_permalink($post_object_called_at->ID); ?>"><?php echo get_the_title($post_object->ID) ?></a> <?php the_sub_field('line_number'); ?></p>
-		<?php endwhile; ?>
-	<?php endif; ?>
-	
-	<?php if(get_field('call')): ?>
-	<hr />
-	<p><strong>call</strong></p>
-		<?php while(the_repeater_field('call')): ?>
-				<?php $post_object_call = get_sub_field('link'); ?>
-				 <p><a href="<?php echo get_permalink($post_object_call->ID); ?>"><?php echo get_the_title($post_object_call->ID) ?></a> <?php the_sub_field('line_number'); ?></p>
-				
-		<?php endwhile; ?>
-	<?php endif; ?>
-	
-	<?php if(get_field('trac_source')): ?>
-		<hr />
-		<p><strong>trac source</strong></p>
-		<?php while(the_repeater_field('trac_source')): ?>
-		   <p><a href="<?php echo the_sub_field('link'); ?>"><?php echo the_sub_field('file'); ?></a> <?php the_sub_field('line_number'); ?></p>
-		<?php endwhile; ?>
-	<?php endif; ?>
-	
-	<?php if(check_related_categories(17)): ?>
-		<hr />
-		<p><strong>Since in version</strong></p>
-		<?php do_action( 'show_post_related_categories', 17, 11); ?>
-	<?php endif; ?>
-	
-	
-	<?php if(check_related_categories(32)): ?>
-		<hr />
-		<p><strong>Use global</strong></p>
-		<?php do_action( 'show_post_related_categories', 32, 11); ?>
-	<?php endif; ?>
-	
-	<?php if(check_related_categories(21)): ?>
-		<hr />
-		<p><strong>Type</strong></p>
-		<?php do_action( 'show_post_related_categories', 21, 11); ?>
-	<?php endif; ?>
-	
-
-	
-	<?php if(get_field('related')): ?>
-		<hr />
-		<p><strong>Related</strong></p>
-		<ul>
-		<?php foreach(get_field('related') as $post_object): ?>
-		    <li><a href="<?php echo get_permalink($post_object->ID); ?>"><?php echo get_the_title($post_object->ID) ?></a></li>
-		<?php endforeach; ?>
-		</ul>
-	<?php endif; ?>
 
 	<footer class="entry-meta">
-		<!--<?php
+		<?php
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( __( ', ', 'twentyeleven' ) );
 
@@ -150,11 +48,7 @@
 				get_the_author(),
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) )
 			);
-		?>-->
-		
-		
-		
-		
+		?>
 		<?php edit_post_link( __( 'Edit', 'twentyeleven' ), '<span class="edit-link">', '</span>' ); ?>
 
 		<?php if ( get_the_author_meta( 'description' ) && is_multi_author() ) : // If a user has filled out their description and this is a multi-author blog, show a bio on their entries ?>

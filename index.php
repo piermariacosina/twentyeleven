@@ -16,8 +16,6 @@ get_header(); ?>
 
 		<div id="primary">
 			<div id="content" role="main">
-			
-			<div class="browseby"><span>browse by last contents</span></div>
 
 			<?php if ( have_posts() ) : ?>
 
@@ -51,5 +49,4 @@ get_header(); ?>
 		</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
-<?php get_sidebar("advert"); ?>
 <?php get_footer(); ?>

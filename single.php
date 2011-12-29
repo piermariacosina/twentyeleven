@@ -29,6 +29,4 @@ get_header(); ?>
 			</div><!-- #content -->
 		</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
-<?php get_sidebar("advert"); ?>
 <?php get_footer(); ?>

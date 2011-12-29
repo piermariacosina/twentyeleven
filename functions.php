@@ -418,16 +418,6 @@ function twentyeleven_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Adverts', 'twentyeleven' ),
-		'id' => 'sidebar-6',
-		'description' => __( 'An optional widget area for your site advert', 'twentyeleven' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
 }
 add_action( 'widgets_init', 'twentyeleven_widgets_init' );
 
@@ -601,45 +591,3 @@ function twentyeleven_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'twentyeleven_body_classes' );
 
-function post_related_categories( $parent_category ) {
-	global $post;
-	
-	$args=array(
-		'type' => 'post',
-		'child_of' => $parent_category,
-		'hide_empty' => true,
-		'hierarchical' => true
-	  );
-	
-	$categories=get_categories($args);
-	
-	foreach($categories as $category) {
-		if (in_category( (int) $category->term_id, (int) $post->ID )){
-	   		echo '<p><a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a></p>';  
-	 	}
-	 }
- 
- }
-add_action( 'show_post_related_categories', 'post_related_categories', 6, 1 );
-
-function check_related_categories( $parent_category ) {
-	global $post;
-	
-	(int) $id = $post->ID;
-	
-	$args=array(
-		'type' => 'post',
-		'child_of' => $parent_category,
-		'hide_empty' => true,
-		'hierarchical' => true
-	  );
-
-	$categories=get_categories($args);
-	
-	foreach($categories as $category) {
-		
-		if ( in_category( (int) $category->term_id, $id ) ){
-	   		return true;
-	 	}
-	 }
- }
