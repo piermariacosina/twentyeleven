@@ -16,6 +16,7 @@ Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, ri
 @import url(http://fonts.googleapis.com/css?family=Vollkorn:italic,bold,400,700);
 @import url(http://fonts.googleapis.com/css?family=Lekton:400,700);
 
+<<<<<<< HEAD
 @import url('http://www.xyz.com/wp-content/fonts/linux-libertine-fontfacekit/linlibertine_re-4.7.5ro-webfont.eot');
 @import url('http://www.xyz.com/wp-content/fonts/linux-libertine-fontfacekit/linlibertine_re-4.7.5ro-webfont.eot?#iefix') format('embedded-opentype'),
 @import url('http://www.xyz.com/wp-content/fonts/linux-libertine-fontfacekit/linlibertine_re-4.7.5ro-webfont.woff') format('woff'),
@@ -28,6 +29,8 @@ Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, ri
 @import url('/fonts/oratorstd-webfont.svg#OratorStdMedium') format('svg');*/
 
 
+=======
+>>>>>>> buddydex_theme
 
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
 -------------------------------------------------------------- */
@@ -105,9 +108,14 @@ hgroup {
 	position: absolute;
 	width: 570px;
 	height: 290px;
+<<<<<<< HEAD
 	background: #f3f4e6;
     background-image:url('images/logo_bd.png') no-repeat center bottom;
     z-index: -10;
+=======
+	background: #ccc;
+	z-index: -10;
+>>>>>>> buddydex_theme
 }
 
 #access div {
@@ -125,14 +133,22 @@ hgroup {
 }
 #secondary {
 	float: left;
+<<<<<<< HEAD
 	margin: 0 22px 0 0px;
+=======
+	margin: 0 22px 0 10px;
+>>>>>>> buddydex_theme
 	width: 220px;
 }
 #tertiary {
 	width: 183px;
 	margin-left: 22px;
 	overflow: hidden;
+<<<<<<< HEAD
 	/* background: #474242; */
+=======
+	background: red;
+>>>>>>> buddydex_theme
 }
 
 /* Singular */
@@ -1801,6 +1817,7 @@ section.recent-posts .other-recent-posts li:after {
 	clear: both;
 }
 .widget_mcswwidget {
+<<<<<<< HEAD
     top:36px
 	margin: 0 0 0 10px;
 	height: 290px;
@@ -1887,6 +1904,11 @@ select {
 
 }
 
+=======
+	margin: 0;
+	height: 290px;
+}
+>>>>>>> buddydex_theme
 /* <-- find a better way to do this... */
 aside[id*="dc_jqaccordion_widget"] .widget-title {
 	display: none;
@@ -1933,16 +1955,23 @@ aside[id*="dc_jqaccordion_widget"] .widget-title {
 .widget-title,
 .browseby,
 #secondary .widget_mcswwidget:after {
+<<<<<<< HEAD
 	font: .95em/2.5em 'Lekton', Georgia, 'Times New Roman', Times, serif;
 	color: #c6c3ba;
 	text-transform: lowercase;
 	
+=======
+	font: italic .95em/1.5em 'Vollkorn', Georgia, 'Times New Roman', Times, serif;
+	color: #c6c3ba;
+	text-transform: lowercase;
+>>>>>>> buddydex_theme
 	/*
 	font-size: 14px;
 	letter-spacing: 0.1em;
 	line-height: 2.6em;
 	*/
 }
+<<<<<<< HEAD
 
 .widget_mcswwidget .widget-title {
 	font: .95em/2.5em 'Lekton', Georgia, 'Times New Roman', Times, serif;
@@ -1962,6 +1991,8 @@ aside[id*="dc_jqaccordion_widget"] .widget-title {
 	*/
 }
 
+=======
+>>>>>>> buddydex_theme
 #content .browseby {
 	width: 550px;
 	position: relative;
@@ -1972,7 +2003,11 @@ aside[id*="dc_jqaccordion_widget"] .widget-title {
 	display: table;
 }
 #content .browseby span {
+<<<<<<< HEAD
 	display: block;
+=======
+	display: table-cell;
+>>>>>>> buddydex_theme
 	vertical-align: middle;
 }
 .widget ul {
@@ -2944,5 +2979,9 @@ p.comment-form-comment {
 /* Fix Category widget size ----------------------*/
 #categorydiv, #categorydiv.inside, #categorydiv.tabs-panel {
 	height: auto !important;
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> buddydex_theme
